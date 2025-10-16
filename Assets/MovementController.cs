@@ -34,4 +34,5 @@ public class MovementController : MonoBehaviour
     {
         m_Rigibody.AddForce(v.normalized * m_Thrust); // v.normalized will make our vector normal that means we will have the route 1 and it will move with no speed up
     }
+
 }
