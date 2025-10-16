@@ -3,31 +3,35 @@ using UnityEngine;
 public class MovementController : MonoBehaviour
 {
     Rigidbody m_Rigibody;
-    public float m_Thrust = 1f;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public float m_Thrust = 20f;
+    private Vector3 v;
     void Start()
     {
         m_Rigibody = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
+        v = Vector3.zero; // If I will not do this our vector will be moving at the route for infinity
         if (Input.GetKey(KeyCode.UpArrow))
         {
-            m_Rigibody.AddForce(Vector3.forward * m_Thrust);
+            v += Vector3.forward; // If there will be just v = Vector3.forward; we will not be able to walk in 2 ways like up and right, we will go just a the last pressed way, so to work all buttons we just add to the Vector not just equlize them
         }
         if (Input.GetKey(KeyCode.DownArrow))
         {
-            m_Rigibody.AddForce(Vector3.back * m_Thrust);
+            v += Vector3.back;
         }
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            m_Rigibody.AddForce(Vector3.left * m_Thrust);
+            v += Vector3.left;
         }
         if (Input.GetKey(KeyCode.RightArrow))
         {
-            m_Rigibody.AddForce(Vector3.right * m_Thrust);
+            v += Vector3.right;
         }
+    }
+    void FixedUpdate()
+    {
+        m_Rigibody.AddForce(v.normalized * m_Thrust); // v.normalized will make our vector normal that means we will have the route 1 and it will move with no speed up
     }
 }
