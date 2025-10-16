@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class MovementController : MonoBehaviour
 {
+    public int score;
+
     Rigidbody m_Rigibody;
     public float m_Thrust = 1f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
