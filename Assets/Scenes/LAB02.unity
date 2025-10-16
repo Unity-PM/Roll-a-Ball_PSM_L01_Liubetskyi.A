@@ -1389,13 +1389,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.42032745, y: 0.0030046403, z: -0.001389578, w: 0.9073665}
-  m_LocalPosition: {x: -0.5323188, y: 17.827032, z: -17.12844}
+  m_LocalRotation: {x: -0.42971313, y: 0.14307778, z: -0.06917002, w: -0.88887054}
+  m_LocalPosition: {x: 2.3970137, y: 16.52987, z: -10.799427}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!114 &963194229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1408,8 +1408,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 592be36df491e6145900143fda7c0a9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraMovement
-  cameraPosition: {x: 0, y: 0, z: 0}
-  ballPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &995448223
 GameObject:
   m_ObjectHideFlags: 0

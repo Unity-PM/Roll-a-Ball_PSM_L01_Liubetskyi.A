@@ -2,15 +2,16 @@ using UnityEngine;
 
 public class CameraMovement : MonoBehaviour
 {
-    private Vector3 ballPosition;
-    private Vector3 dist;
+    private Transform player;
+
     public void Start()
     {
-       ballPosition = gameObject.GetComponent<MovementController>().transform.position; 
-       dist = transform.position - ballPosition;
+        player = GameObject.Find("Player").transform;
     }
+
     void Update()
     {
-        transform.position = ballPosition + dist;
+        transform.position = new Vector3(player.position.x, player.position.y + 10, player.position.z);
+        transform.rotation = Quaternion.Euler(90, 0, 0);
     }
 }
